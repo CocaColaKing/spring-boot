@@ -1,0 +1,21 @@
+spring:
+  datasource:
+    hikari:
+      driver-class-name: com.mysql.jdbc.Driver
+      username: ailian
+      password: 6o7Z6IZp7ygSAdbHTailianNwlLA=
+      jdbc-url: jdbc:mysql://114.55.224.114:3306/lovelearn_main
+    url: jdbc:mysql://114.55.224.114:3306/lovelearn_main
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    username: ailian
+    password: 6o7Z6IZp7ygSAdbHTailianNwlLA=
+  thymeleaf:
+    cache: false
+    prefix: classpath:templates/
+    suffix: .html
+    mode: HTML
+    encoding: UTF-8
+server:
+  port: 8888
+mybatis:
+  type-aliases-package: com.jyw.springboot

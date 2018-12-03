@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+    <context id="DB2Tables" targetRuntime="MyBatis3">
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <!--<jdbcConnection driverClass="oracle.jdbc.OracleDriver" connectionURL="jdbc:oracle:thin:@localhost:1521:xe" userId="test" password="test123456">-->
+        <!--<jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://192.168.1.87:22354/i9tousit" userId="i9tousit" password="i9tousit123">-->
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://114.55.224.114:3306/lovelearn_main" userId="ailian" password="6o7Z6IZp7ygSAdbHTailianNwlLA=">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.jyw.springboot.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+        -->
+        <javaClientGenerator type="ANNOTATEDMAPPER" targetPackage="com.jyw.springboot.mapper" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名-->
+        <!--<table tableName="%"/>-->
+        <table tableName="user_basic_info" domainObjectName="User"/>
+        <!--<table tableName="tg_log" domainObjectName="TgLog" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+        <!--<table tableName="user_basic_info" domainObjectName="User" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" enableSelectByExample="false" selectByExampleQueryId="false"/>-->
+        <!--<table tableName="user" domainObjectName="User">-->
+            <!--<columnOverride column="is_delete" property="delete" javaType="java.lang.Boolean"/>-->
+            <!--<columnOverride column="gender" property="gender" javaType="java.lang.Integer"/>-->
+            <!--<columnOverride column="age" property="age" javaType="java.lang.Integer"/>-->
+        <!--</table>-->
+        <!--<table tableName="product"/>-->
+        <!--<table tableName="visitor" />-->
+        <!--<table tableName="interview" />-->
+        <!--<table tableName="resume" />-->
+        <!--<table tableName="resume_send" />-->
+        <!--<table tableName="recruitment" />-->
+        <!--<table tableName="pay_record">
+            <columnOverride column="record_type" property="recordType" javaType="com.jywhy.springbootdemo.enumeration.RecorderType"/>
+        </table>-->
+    </context>
+</generatorConfiguration>
